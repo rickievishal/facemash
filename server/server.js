@@ -33,7 +33,7 @@ app.get("/",(req,res)=>{
 })
 app.post("/upload-profile",upload.single('image'),(req,res)=>{
     if (!req.file) return res.status(400).json({msg : "no photo uploaded"})
-    const imgUrl = `http://localhost:3000/uploads/${req.file.filename}`
+    const imgUrl = `https://facemash-ze0r.onrender.com/uploads/${req.file.filename}`
     res.status(200).json({imgUrl})
 })
 app.get("/getProfiles",async (req,res) => {
